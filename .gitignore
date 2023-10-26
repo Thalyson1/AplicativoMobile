@@ -33,6 +33,15 @@ local.properties
 .cxx/
 *.keystore
 !debug.keystore
+.eslintrc
+.prettierrc.js
+.watchmanconfig
+Gemfile
+index.js
+jest.config.js
+metro.config.js
+tarn.lock
+
 
 # node.js
 #
