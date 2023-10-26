@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-Ionicons.loadFont();//Esse aqui
+Ionicons.loadFont();
 
 
 interface Props {
