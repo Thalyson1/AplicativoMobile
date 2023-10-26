@@ -40,7 +40,7 @@ Gemfile
 index.js
 jest.config.js
 metro.config.js
-tarn.lock
+yarn.lock
 
 
 # node.js
