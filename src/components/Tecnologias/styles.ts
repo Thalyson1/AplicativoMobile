@@ -28,4 +28,12 @@ export const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
   },
+  strikedText: {
+    textDecorationLine: 'line-through',
+    color: '#808080',
+  },
+  normalText: {
+    textDecorationLine: 'none',
+    color: 'black',
+  },
 });

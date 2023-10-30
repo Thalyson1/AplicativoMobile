@@ -59,7 +59,16 @@ export const styles = StyleSheet.create({
     marginLeft:'auto',
     flex: 1, 
   },
-
+  addButton:{
+    fontSize: 32,
+    color: 'white',
+    borderWidth: 1,
+    borderColor:'white',
+    marginLeft: 8,
+    borderRadius: 10,
+    //backgroundColor: 'white',
+    padding: 11
+  }
   
   
 })

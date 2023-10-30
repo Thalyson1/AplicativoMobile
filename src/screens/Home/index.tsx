@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Alert, ScrollView } from 'react-native';
 import { Tecnologias } from '../../components/Tecnologias';
-import { Button } from '../../components/Button';
 import { styles } from './styles';
+
+import Ionicons from 'react-native-vector-icons/Ionicons'
+
+
 
 export function Home() {
   const [nameTecnologia, setnameTecnologia] = useState('');
   const [names, setNames] = useState([] as string[]);
   const [tecnologiaStates, settecnologiaStates] = useState<{ [key: string]: boolean }>({});
   const [concluidos, setConcluidos] = useState(0);
+
 
   const addTecnologia = () => {
     if (names.includes(nameTecnologia) || nameTecnologia === '') {
@@ -20,6 +24,7 @@ export function Home() {
     setnameTecnologia('');
   };
 
+  
   const removeTecnologia = (name: string) => {
     Alert.alert('Remove', `Deseja realmente remover ${name}`, [
       {
@@ -33,9 +38,11 @@ export function Home() {
           const concludedCount = Object.values(updatedStates).filter(Boolean).length;
           setConcluidos(concludedCount);
         },
+        style: 'destructive',
       },
       {
         text: 'não',
+        style: 'cancel'
       },
     ]);
   };
@@ -47,7 +54,9 @@ export function Home() {
     const concludedCount = Object.values(updatedtecnologiaStates).filter(Boolean).length;
     setConcluidos(concludedCount);
   };
+
   
+    
 
   return (
     <View style={styles.container}>
@@ -61,7 +70,11 @@ export function Home() {
           onChangeText={(text) => setnameTecnologia(text)}
           value={nameTecnologia}
         />
-        <Button title="+" onPress={addTecnologia} />
+        <Ionicons 
+          name="add-circle-outline"
+          style={styles.addButton}
+          onPress={addTecnologia}
+        ></Ionicons>
       </View>
 
 
@@ -93,7 +106,9 @@ export function Home() {
               name={item}
               remove={() => removeTecnologia(item)}
               isChecked={tecnologiaStates[item]}
-              onToggleCheck={(isChecked) => handleToggleCheck(item, isChecked)}
+              onToggleCheck={(isChecked) => handleToggleCheck(item, isChecked)} nameStyle={function (): void {
+                throw new Error('Function not implemented.');
+              } }  
             />
           ))
         )}
